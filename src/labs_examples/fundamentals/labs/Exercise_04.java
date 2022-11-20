@@ -17,6 +17,23 @@ public class Exercise_04 {
 
         // write your code below
 
-    }
 
-}
+	      boolean j = true;
+	      char k = 'k';
+	      int l = 7;
+	      long m = 9223372036854775801l;
+	      byte n = 100;
+	      short o = 20000;
+	      double p = 3.14;
+	      float q = 1000000.0f;
+
+	    System.out.println(j);
+	    System.out.println(k);
+	    System.out.println(l);
+	    System.out.println(m);
+	    System.out.println(n);
+	    System.out.println(o);
+	    System.out.println(p);
+	    System.out.println(q);
+	  }
+	}
