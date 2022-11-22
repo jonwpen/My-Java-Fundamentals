@@ -25,5 +25,14 @@ public class Exercise_02 {
 
         // write code here
 
+    	int a = 10;
+    	double b = a;
+    	System.out.println(b);
+    	
+    	double c = 10.5;
+    	int d = (int) c;
+    	System.out.println(d);
+    	
+    	//Information is lost when the double is declared as an int "d" in the second example.
     }
 }

@@ -14,5 +14,28 @@ public class Exercise_06 {
 
         // write code here
 
+    	
+    	double radius = 3.14;
+    	int height = 5;
+    	double volume = Math.PI*(radius*radius)*height;
+    	
+    	System.out.println("Volume: "+volume);
+    	
+    	double surfaceArea = (Math.PI*(radius*radius))+(Math.PI*(radius*radius))+(height*Math.PI*(radius*2));
+    	
+    	System.out.println("Surface area: "+surfaceArea);
+    	
+    	
+    	
     }
 }
+
+
+
+
+//Volume of a cylinder:
+//area = pi * rSquared
+//volume = area * height
+
+//Surface area of a cylinder:
+//pi * rSquared + pi * rSquared + h * pi * diameter

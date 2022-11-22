@@ -6,7 +6,7 @@ package labs_examples.datatypes_operators.labs;
  * less than, less than or equal to, greater than, greater than or equal to, and equal to
  *
  */
-class RelationalOperators {
+class Exercise_04 {
 
     public static void main(String[] args) {
 
@@ -19,6 +19,26 @@ class RelationalOperators {
 
         // write your code below
 
+        int h = 13;
+        int i = 39;
+        if (h==i) {
+        	System.out.println("h is equal to i");
+        }
+        if(h != i) {
+        	System.out.println("h is not equal to i");
+        }
+        if(h <= i) {
+        	System.out.println("h is less than or equal to i");
+        }
+        if(h > i) {
+        	System.out.println("h is greater than i");
+        }
+        if(h < i) {
+        	System.out.println("h is greater than i");
+        }
+        if(h >= i) {
+        	System.out.println("h is greater than or equal to i");
+        }
     }
 
 }
