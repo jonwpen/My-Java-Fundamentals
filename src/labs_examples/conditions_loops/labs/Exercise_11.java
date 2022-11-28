@@ -22,5 +22,24 @@ package labs_examples.conditions_loops.labs;
  */
 
 public class Exercise_11 {
+	public static void main(String[] args) {
+		
+		int rows = 10;
+		int columns = 10;
+		
+
+		
+		for(int i = 1; i<= rows; i++) {
+			
+			System.out.println();
+			
+			for(int j = 1; j <=columns; j++) {
+			
+				System.out.print(" "+i*j+" ");
+				
+			}
+			
+		}
+	}
 
 }

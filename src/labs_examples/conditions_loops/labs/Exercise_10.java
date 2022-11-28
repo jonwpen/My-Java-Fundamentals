@@ -8,4 +8,14 @@ package labs_examples.conditions_loops.labs;
  */
 
 public class Exercise_10 {
+	public static void main(String[] args) {
+		
+		for(int i =0; i < 30; i++) {
+			
+			if(i==15) {
+				continue;
+			}
+			System.out.println(i);
+		}
+	}
 }
