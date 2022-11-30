@@ -18,12 +18,26 @@ public class Exercise_06 {
         int[] nums = {45, 87, 62, 99, 1, 42, 12};
 
         int temp;
+        
+     
 
-        // Question: in the for loop below, why do we divide "nums.length" by 2?
-        for(int i = 0; i < nums.length / 2; i++){
+        // Question: in the for loop below, why do we divide "nums.length" by 2? Answer: Because the required method is to to swap indices on opposite ends until we get to the middle.
+        for(int i = 0; i < nums.length /2; i++){
             // swap elements at indexes in array
             // you have two indices readily available for you to use "i" (which increments) and "nums.length"
             // you've also got this "temp" variable you can use to hold a value temporarily
+        	
+        	
+        	
+        	
+        	temp = nums[i];
+        	nums[i] = nums[nums.length - i - 1]; //every time the for loop iterates, the next i is equal to its opposite in the array.
+        	nums[nums.length - i - 1] = temp;
+        	
+        	
+        	
+        	
+        	
         }
         System.out.print("Contents of array after for loop - ");
         // print each element of the array to verify reverse order
@@ -33,3 +47,4 @@ public class Exercise_06 {
     }
 
 }
+

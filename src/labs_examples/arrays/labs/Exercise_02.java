@@ -1,5 +1,7 @@
 package labs_examples.arrays.labs;
 
+import java.util.Scanner;
+
 /**
  *  More labs_examples.arrays
  *
@@ -16,6 +18,17 @@ public class Exercise_02 {
 
         // write code here
 
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter a number between 1 and 10:");
+        
+        int num = sc.nextInt();
+        
+        for(int i =0; i < array.length; i++) {
+        	if(i == num) {
+        		System.out.println("index is: "+ array[i]);
+        	}
+        }
 
     }
 }
