@@ -1,7 +1,8 @@
 
 Without running the code below, please tell me what will print. Why?
 
-
+Answer:
+In this case, c is not used. So all constructors are called until reaching the instantiated child object class, in order from Superclass to subclass.
 
 
 public class InheritanceTest

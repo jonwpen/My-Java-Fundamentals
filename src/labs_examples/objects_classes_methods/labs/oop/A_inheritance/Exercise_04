@@ -1,6 +1,10 @@
 
 Without running the code below, please tell me what it will print.
 
+Answer:
+"Child Called" will print. c is an instantiation of Child and of type Parent. 
+
+
 
 
 public class InheritanceTest

@@ -4,6 +4,8 @@ package labs_examples.objects_classes_methods.labs.oop.A_inheritance;
  * Why does the output print in the order it does?
  *
  * You answer:
+ * In order from parent to child, every constructor is called until it gets to the object that is called in the main.
+ * If class B_1 was instantiated instead of C_1, class A_1 constructor would be called, then class B_1, then the program would end.
  *
  */
 
