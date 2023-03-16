@@ -4,6 +4,9 @@ import java.util.Scanner;
 public class BlackjackController {
 
 	static Scanner sc = new Scanner(System.in);
+	static int gamesPlayed;
+	static int p1wins;
+	static int p2wins;
 	
 	public static void main(String[] args) {
 
@@ -11,6 +14,11 @@ public class BlackjackController {
 		
 		playBlackJack(deck);
 		System.out.println("Let's play again!");
+	}
+	//Tracks how many games each player has won.
+	public static void winsCounter(Player a, Player b) {
+		System.out.println(a.name+" wins: "+p1wins);
+		System.out.println(b.name+" wins: "+p2wins);
 	}
 	public static void playBlackJack(Deck deck) {
 		
@@ -29,6 +37,9 @@ public class BlackjackController {
 		
 		while(one.wallet > 0 && two.wallet > 0) {
 			coreGameLoop(one,two,deck);
+			gamesPlayed++;
+			System.out.println("Games played: "+gamesPlayed);
+			winsCounter(one,two);
 		}
 		if(one.wallet < 1 || two.wallet < 1) {
 			System.out.println("\n"+one.name+" has $"+one.wallet+" and the computer has $"+two.wallet+".\nGame over");
@@ -115,18 +126,21 @@ public class BlackjackController {
 				System.out.println(a.name+"'s "+a.hand.toString()+"\n"+b.name+"'s "+b.hand.toString());
 				System.out.println("You have "+a.hand.handValue+" and the computer has "+b.hand.handValue+".\n"+a.name+" wins!");
 				a.wallet += potValue;
+				p1wins++;
 				return;
 			}
 			if(a.hand.handValue>21 && b.hand.handValue<22) {
 				System.out.println(a.name+"'s "+a.hand.toString()+"\n"+b.name+"'s "+b.hand.toString());
 				System.out.println("You have "+a.hand.handValue+" and the computer has "+b.hand.handValue+".\nThe computer wins.");
 				b.wallet += potValue;
+				p2wins++;
 				return;
 			}
 			if(a.hand.handValue>b.hand.handValue && a.hand.handValue<22) {
 				System.out.println(a.name+"'s "+a.hand.toString()+"\n"+b.name+"'s "+b.hand.toString());
 				System.out.println("You have "+a.hand.handValue+" and the computer has "+b.hand.handValue+".\n"+a.name+" wins!");
 				a.wallet += potValue;
+				p1wins++;
 				return;
 			}
 			if(a.hand.handValue==b.hand.handValue) {
@@ -140,6 +154,7 @@ public class BlackjackController {
 				System.out.println(a.name+"'s "+a.hand.toString()+"\n"+b.name+"'s "+b.hand.toString());
 				System.out.println("You have "+a.hand.handValue+" and the computer has "+b.hand.handValue+".\nThe computer wins.");
 				b.wallet += potValue;
+				p2wins++;
 				return;
 			}
 	}
