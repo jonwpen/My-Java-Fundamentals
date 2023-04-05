@@ -1,6 +1,6 @@
 package labs_examples.input_output.examples;
 
-// A simple key-to-disk utility that demonstrates a FileWriter.
+// A simple key-to-disk utility that demonstrates a FileWriter. 
 
 // This code requires JDK 7 or later.
 

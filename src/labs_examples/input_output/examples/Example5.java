@@ -1,6 +1,6 @@
 package labs_examples.input_output.examples;
 
-/* Copy a text file.
+/* Copy a text file.   
    To use this program, specify the name
    of the source file and the destination file.
    For example, to copy a file called FIRST.TXT
@@ -10,7 +10,7 @@ package labs_examples.input_output.examples;
    java CopyFile FIRST.TXT SECOND.TXT
 */
 
-import java.io.FileInputStream;
+import java.io.FileInputStream; 
 import java.io.FileOutputStream;
 import java.io.IOException;
 

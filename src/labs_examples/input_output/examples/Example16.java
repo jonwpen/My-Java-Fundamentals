@@ -1,6 +1,6 @@
 package labs_examples.input_output.examples;
 
-/* This program averages a list of numbers entered
+/* This program averages a list of numbers entered 
    by the user.  */
 
 import java.io.BufferedReader;

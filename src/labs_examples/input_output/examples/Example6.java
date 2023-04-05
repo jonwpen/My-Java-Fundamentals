@@ -1,6 +1,6 @@
 package labs_examples.input_output.examples;
 
-/* This version of the ShowFile program uses a try-wth-resources
+/* This version of the ShowFile program uses a try-wth-resources 
    statement to automatically close a file when it is no longer needed.
 
    Note: This code requires JDK 7 or later.

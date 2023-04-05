@@ -1,6 +1,6 @@
 package labs_examples.input_output.examples;
 
-/* Write and then read back binary data.
+/* Write and then read back binary data.  
 
    This code requires JDK 7 or later.
 */

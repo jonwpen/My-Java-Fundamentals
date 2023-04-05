@@ -17,7 +17,7 @@ import java.io.IOException;
 class ShowFile {
     public static void main(String args[])
     {
-        String filePath = "src/labs_examples/input_output/files/byte_data";
+        String filePath = "labs_examples/input_output/files/byte_data";
 
         int i;
         FileInputStream fin;

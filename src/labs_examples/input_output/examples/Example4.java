@@ -1,6 +1,6 @@
 package labs_examples.input_output.examples;
 
-/* This variation wraps the code that opens and
+/* This variation wraps the code that opens and 
    accesses the file within a single try block.
    The file is closed by the finally block.
 */
@@ -44,3 +44,7 @@ class ShowFile2 {
         }
     }
 }
+//As mentioned in the video walk-through, THIS IS WHAT IT WILL ALWAYS LOOK LIKE. ITS THE STANDARD. NO ROOM FOR CREATIVITY.
+
+
+
