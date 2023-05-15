@@ -60,7 +60,7 @@ class MyThread9 implements Runnable {
     }
 }
 
-class Suspend {
+class Example12 {
     public static void main(String args[]) {
         MyThread9 ob1 = new MyThread9("My Thread");
 

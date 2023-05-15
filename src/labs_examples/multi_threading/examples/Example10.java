@@ -48,7 +48,7 @@ class TickTock {
         }
     }
 }
-
+//________________________________________________________________________
 class MyThread8 implements Runnable {
     Thread thrd;
     TickTock ttOb;
@@ -76,7 +76,7 @@ class MyThread8 implements Runnable {
     }
 }
 
-class ThreadCom {
+class Example10 {
     public static void main(String args[]) {
         TickTock tt = new TickTock();
         MyThread8 mt1 = new MyThread8("Tick", tt);
