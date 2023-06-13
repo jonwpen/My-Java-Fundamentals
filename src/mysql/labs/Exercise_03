@@ -10,7 +10,7 @@
 *       4.) Query the flight information for a specific passenger on a specific flight
 *       5.) Query the passenger information for a specific user on a specific flight yesterday
 *       6.) Query the number of flights between two specific cities this week, month, and year
-*       7.) Query the number of passengers that travelled between two specific cities today, this week, month and year
+*       7.) Query the number of passengers that traveled between two specific cities today, this week, month and year
 *       8.) Insert records for new flights between airports
 *       9.) Insert records for new tickets and passengers on specific flights
 *       10.) Update meal preference (or something similar) for a specific passenger on a specific flight
@@ -18,3 +18,39 @@
 *           you've got! :)
 *
 */
+
+
+1.) 
+SELECT * FROM flights WHERE DATE(depart_time) = '2022-10-28';
+
+2.)
+SELECT * FROM flights WHERE DATE(depart_time) = CURRENT_DATE AND route_id = 7;
+
+3.)
+SELECT passengers.first_name, passengers.last_name FROM passengers 
+JOIN booking
+ON passengers.passender_id = booking.passenger_id
+JOIN flights
+ON booking.flight_id = flights.flight_id
+WHERE DATE(flights.depart_time) = CURRENT_DATE() AND flights.route_id = 36;
+
+4.)
+SELECT passengers.first_name, passengers.last_name, meals.meal_name, flights.flight_status, tickets.seat_number, departing_destinations.city AS departing_city, departing_destinations.country AS departing_country, arriving_destinations.city AS arriving_city, arriving_destinations.country AS arriving_country
+FROM passengers
+JOIN booking
+  ON passengers.passender_id = booking.passenger_id
+JOIN flights
+  ON booking.flight_id = flights.flight_id
+JOIN meals
+  ON booking.meal_preference = meals.meal_id
+JOIN tickets
+  ON booking.ticket_id = tickets.ticket_id
+JOIN route
+  ON flights.route_id = route.route_id
+JOIN destinations AS departing_destinations
+  ON route.departing_dest = departing_destinations.destination_id
+JOIN destinations AS arriving_destinations
+  ON route.arriving_dest = arriving_destinations.destination_id
+WHERE flights.flight_id = 9 AND passengers.passender_id = 4;
+
+5.)
