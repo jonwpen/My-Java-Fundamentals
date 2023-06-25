@@ -54,3 +54,97 @@ JOIN destinations AS arriving_destinations
 WHERE flights.flight_id = 9 AND passengers.passender_id = 4;
 
 5.)
+SELECT passengers.first_name, passengers.last_name, passengers.date_of_birth, passengers.phone, meals.meal_name, passengers.email, tickets.seat_number
+FROM passengers
+JOIN booking
+ON passengers.passender_id = booking.passenger_id
+JOIN flights
+ON booking.flight_id = flights.flight_id
+JOIN meals
+ON booking.meal_preference = meals.meal_id
+JOIN tickets
+ON booking.ticket_id = tickets.ticket_id
+JOIN route
+ON flights.route_id = route.route_id
+JOIN destinations
+ON route.departing_dest = destinations.destination_id
+WHERE passengers.passender_id = 2 AND DATE(flights.depart_time) = DATE(DATE_SUB(NOW(), INTERVAL 1 DAY));
+
+6.)
+SELECT COUNT(flights.flight_id) AS num_of_flights
+FROM flights
+WHERE flights.route_id = 36 AND flights.depart_time >= CURDATE() - INTERVAL WEEKDAY(CURDATE()) DAY
+AND flights.depart_time < CURDATE() - INTERVAL WEEKDAY(CURDATE()) - 6 DAY;
+
+SELECT COUNT(flights.flight_id) AS num_of_flights
+FROM flights
+WHERE flights.route_id = 7 AND DATE_FORMAT(flights.depart_time, '%Y-%m') = DATE_FORMAT(CURDATE(), '%Y-%m');
+
+SELECT COUNT(flights.flight_id) AS num_of_flights
+FROM flights
+WHERE flights.route_id = 7 AND YEAR(flights.depart_time) = YEAR(CURDATE());
+
+7.)
+SELECT COUNT(passengers.passender_id) AS num_of_passengers
+FROM passengers
+JOIN booking
+ON passengers.passender_id = booking.passenger_id
+JOIN flights
+ON booking.flight_id = flights.flight_id
+WHERE flights.route_id = 36 AND flights.depart_time >= CURDATE() - INTERVAL WEEKDAY(CURDATE()) DAY
+AND flights.depart_time < CURDATE() - INTERVAL WEEKDAY(CURDATE()) - 6 DAY;
+
+SELECT COUNT(passengers.passender_id) AS num_of_passengers
+FROM passengers
+JOIN booking
+ON passengers.passender_id = booking.passenger_id
+JOIN flights
+ON booking.flight_id = flights.flight_id
+WHERE flights.route_id = 36 AND DATE_FORMAT(flights.depart_time, '%Y-%m') = DATE_FORMAT(CURDATE(), '%Y-%m');
+
+SELECT COUNT(passengers.passender_id) AS num_of_passengers
+FROM passengers
+JOIN booking
+ON passengers.passender_id = booking.passenger_id
+JOIN flights
+ON booking.flight_id = flights.flight_id
+WHERE flights.route_id = 11 AND YEAR(flights.depart_time) = YEAR(CURDATE());
+
+8.)
+INSERT INTO flights
+(airline_id, depart_time, arrival_time, route_id, flight_status, plane_id)
+VALUES
+(3, '2023-06-13 10:25:43', '2023-06-13 16:25:43', 17, "On Time", 3),
+(4, '2023-06-13 11:25:43', '2023-06-14 17:25:43', 17, "On Time", 7),
+(1, '2023-06-13 12:25:43', '2023-06-15 18:25:43', 17, "On Time", 12);
+
+9.)
+INSERT INTO passengers (first_name, last_name, email, date_of_birth, phone)
+VALUES
+("Jane", "Guimte", "jgimty@gmail.com", "1989-02-02", 9215557482),
+("Vince", "Collada", "vcollada@gmail.com", "2005-01-01", 5550981123);
+
+INSERT INTO tickets (time_purchased, class_id, price, seat_number)
+VALUES
+('2023-04-02 14:15:22', 3, 334.57, 24),
+('2023-04-02 12:11:11', 3, 334.57, 25);
+
+#use the newly created passenger and ticket id to create new bookings
+INSERT INTO booking (ticket_id, flight_id, passenger_id, booking_agency_id, meal_preference)
+VALUES
+(20, 4, 16, 2, 5),
+(21, 4, 17, 2, 7);
+
+10.)
+UPDATE booking
+SET meal_preference = 3
+WHERE passenger_id = 17 AND flight_id = 4;
+
+11. Bonus)
+SELECT airlines.name, GROUP_CONCAT(flights.flight_id) AS airline_history
+FROM airlines
+JOIN flights ON airlines.airline_id = flights.airline_id
+GROUP BY airlines.airline_id;
+
+#Return a flight history of each airline
+
